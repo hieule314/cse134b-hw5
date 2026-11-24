@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Contact Hieu Le using a form with native HTML validation."
+    />
+    <title>Contact | Hieu Le</title>
+    <link rel="icon" href="assets/images/favicon-hieu.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-explorer">
+      <div class="explorer-brand">
+        <p class="site-name"><a href="index.html"><img class="brand-avatar" src="assets/images/hieu-avatar.png" width="44" height="44" alt="" /><span class="brand-name">Hieu Le<span class="brand-dot" aria-hidden="true">.</span></span></a></p>
+      </div>
+      <details class="explorer-panel" open>
+        <summary class="explorer-title" aria-label="Site explorer"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span> EXPLORER</summary>
+        <nav aria-label="Main navigation" class="explorer-tree">
+          <details class="explorer-folder" open>
+            <summary>portfolio/</summary>
+            <ul>
+              <li><a href="index.html" aria-label="Home"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>index.html</a></li>
+              <li><a href="about.html" aria-label="About me"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>about.html</a></li>
+              <li><a href="projects.html" aria-label="Projects & resume"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>projects.html</a></li>
+              <li><a href="experiments.html" aria-label="Experiments"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>experiments.html</a></li>
+            </ul>
+          </details>
+          <details class="explorer-folder" open>
+            <summary>contact/</summary>
+            <ul>
+              <li><a href="form-no-js.html" aria-label="Contact (HTML)" aria-current="page"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>form-no-js.html</a></li>
+              <li><a href="form-with-js.html" aria-label="Contact (JS)"><span class="file-icon" aria-hidden="true">&lt;&gt;</span>form-with-js.html</a></li>
+            </ul>
+          </details>
+        </nav>
+      </details>
+      <div class="explorer-bottom">
+        <p class="explorer-social"><a href="https://github.com/hieule314">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/hieule314/">LinkedIn <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <h1>Contact me</h1>
+      <p>
+        Have a question or want to talk about a project? Leave a message below.
+      </p>
+      <p id="form-instructions">
+        All fields are required. Use sample contact information: this demo sends
+        your entries to httpbin, which displays them on a results page.
+        A dashed border marks a field that needs correction after validation.
+      </p>
+
+      <form
+        class="contact-form"
+        action="https://httpbin.org/post"
+        method="post"
+        aria-describedby="form-instructions"
+      >
+        <div class="form-field">
+          <label for="name">Name (required)</label>
+          <p class="field-hint" id="name-hint">
+            Enter 1–100 characters. Names in any language are welcome.
+          </p>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            minlength="1"
+            maxlength="100"
+            aria-describedby="name-hint"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email (required)</label>
+          <p class="field-hint" id="email-hint">
+            Enter an email address, for example alex@example.com.
+          </p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            aria-describedby="email-hint"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="comments">Comments (required)</label>
+          <p class="field-hint" id="comments-hint">
+            Enter 10–1,000 characters about your question or project.
+          </p>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="6"
+            minlength="10"
+            maxlength="1000"
+            aria-describedby="comments-hint"
+            required
+          ></textarea>
+        </div>
+
+        <input type="hidden" name="possible_bot" value="true" />
+        <button type="submit">Send message</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; Hieu Le</p>
+      <p><a href="projects.html#resume">Resume information</a></p>
+    </footer>
+  </body>
+</html>
