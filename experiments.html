@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="theme.js" defer></script>
     <script src="portfolio.js" defer></script>
+    <script src="project-highlights.js" defer></script>
   </head>
   <body class="experiments">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -49,6 +50,26 @@
     <main id="main-content" tabindex="-1">
       <h1>HTML experiments</h1>
       <p>A sandbox for exploring media, graphics, and native HTML elements.</p>
+
+      <section aria-labelledby="custom-heading">
+        <h2 id="custom-heading">Custom elements</h2>
+        <div class="project-highlights-demo">
+          <project-highlights id="project-highlights"></project-highlights>
+          <button
+            class="button-secondary"
+            id="project-highlights-compact"
+            type="button"
+            aria-controls="project-highlights"
+            aria-pressed="false"
+            hidden
+          >Compact view</button>
+          <noscript><p>Enable JavaScript to browse the project highlights.</p></noscript>
+        </div>
+        <p>
+          The <code>portfolio-note</code> element marks the note in the Form controls
+          experiment. Its element-specific CSS gives it block structure and a border.
+        </p>
+      </section>
 
       <section aria-labelledby="text-heading">
         <h2 id="text-heading">Text &amp; reading order</h2>
@@ -343,21 +364,6 @@
             >Read the Reg2Schedg entry on the Projects page</a
           >.
         </p>
-      </section>
-
-      <section aria-labelledby="custom-heading">
-        <h2 id="custom-heading">Custom elements</h2>
-        <p>
-          The <code>portfolio-note</code> element marks the note above the
-          sample form. Its element-specific CSS gives it block structure and a
-          border.
-        </p>
-        <p>
-          The <code>hello-world</code> element below remains an unregistered
-          custom element in this HTML and CSS version. It does not add text,
-          attributes, or other elements to the page.
-        </p>
-        <hello-world></hello-world>
       </section>
 
       <section aria-labelledby="template-heading">
