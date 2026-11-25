@@ -304,15 +304,29 @@ textarea { resize: vertical; }
 .experiments main > section { max-width: 52rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
 .experiments h2 { font-size: 2.2rem; }
 .experiments main > section + section { margin-top: 3rem; }
-.dog-photo-demo { margin-bottom: var(--space); padding: var(--space); border: 1px solid var(--rule); background: var(--surface); }
+.experiments .dog-photo-demo {
+  --dog-photo-background: var(--surface);
+  --dog-photo-text: var(--ink);
+  --dog-photo-muted: var(--muted);
+  --dog-photo-focus: var(--forest);
+}
+.dog-photo-demo {
+  margin-bottom: var(--space);
+  padding: var(--space);
+  border: 1px solid var(--rule);
+  background-color: var(--dog-photo-background, #fffcf4);
+  color: var(--dog-photo-text, #35281f);
+}
 dog-photo-viewer { display: block; }
 .dog-photo-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
-.dog-photo-controls p { margin: 0; color: var(--muted); }
+.dog-photo-controls p { margin: 0; }
+.dog-photo-demo :is([role="status"], figcaption) { color: var(--dog-photo-muted, #685b4c); }
+.dog-photo-demo button:focus-visible { outline: 3px solid var(--dog-photo-focus, #234b39); }
 .dog-photo-controls button[aria-disabled="true"] { border-color: var(--rule); background: var(--paper); color: var(--muted); cursor: wait; }
 .dog-photo-demo figure { margin-top: 1rem; }
 .dog-photo-demo img { max-height: min(24rem, 60vh); object-fit: contain; }
 .dog-photo-demo > button { margin-top: 1rem; }
-.dog-photo-demo > button[aria-pressed="true"] { background: var(--fern); color: var(--ink); }
+.dog-photo-demo > button[aria-pressed="true"] { background: var(--fern); color: var(--dog-photo-text, #35281f); }
 fieldset { min-width: 0; margin: 0; padding: var(--space); border: 1px solid var(--rule); }
 legend { padding-inline: 0.4em; font-weight: bold; }
 fieldset > div { margin-bottom: var(--space); }

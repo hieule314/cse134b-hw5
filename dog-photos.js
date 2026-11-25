@@ -1,6 +1,7 @@
 "use strict";
 
 const dogPhotoEndpoint = "https://dog.ceo/api/breeds/image/random";
+const dogPhotoModeKey = "hw5-dog-photo-viewer-mode";
 
 class DogPhotoViewer extends HTMLElement {
   static observedAttributes = ["compact"];
@@ -89,9 +90,31 @@ customElements.define("dog-photo-viewer", DogPhotoViewer);
 const dogPhotoViewer = document.querySelector("#dog-photos");
 const compactButton = document.querySelector("#dog-photos-compact");
 
-compactButton.setAttribute("aria-pressed", String(dogPhotoViewer.hasAttribute("compact")));
-compactButton.addEventListener("click", () => {
-  const isCompact = dogPhotoViewer.toggleAttribute("compact");
+function applyDogPhotoMode(mode) {
+  const isCompact = mode === "compact";
+  dogPhotoViewer.toggleAttribute("compact", isCompact);
   compactButton.setAttribute("aria-pressed", String(isCompact));
+}
+
+let initialMode = "expanded";
+try {
+  const savedMode = localStorage.getItem(dogPhotoModeKey);
+  if (savedMode === "compact" || savedMode === "expanded") {
+    initialMode = savedMode;
+  }
+} catch {
+  // Use the expanded default if storage is unavailable.
+}
+applyDogPhotoMode(initialMode);
+
+compactButton.addEventListener("click", () => {
+  const nextMode = dogPhotoViewer.hasAttribute("compact") ? "expanded" : "compact";
+  applyDogPhotoMode(nextMode);
+
+  try {
+    localStorage.setItem(dogPhotoModeKey, nextMode);
+  } catch {
+    // The new mode is already active for this page.
+  }
 });
 compactButton.hidden = false;
