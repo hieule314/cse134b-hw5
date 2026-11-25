@@ -304,12 +304,15 @@ textarea { resize: vertical; }
 .experiments main > section { max-width: 52rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
 .experiments h2 { font-size: 2.2rem; }
 .experiments main > section + section { margin-top: 3rem; }
-.project-highlights-demo { margin-bottom: var(--space); padding: var(--space); border: 1px solid var(--rule); background: var(--surface); }
-project-highlights { display: block; }
-.project-highlights-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
-.project-highlights-controls p { margin: 0; color: var(--muted); }
-.project-highlights-demo > button { margin-top: 1rem; }
-.project-highlights-demo > button[aria-pressed="true"] { background: var(--fern); color: var(--ink); }
+.dog-photo-demo { margin-bottom: var(--space); padding: var(--space); border: 1px solid var(--rule); background: var(--surface); }
+dog-photo-viewer { display: block; }
+.dog-photo-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+.dog-photo-controls p { margin: 0; color: var(--muted); }
+.dog-photo-controls button[aria-disabled="true"] { border-color: var(--rule); background: var(--paper); color: var(--muted); cursor: wait; }
+.dog-photo-demo figure { margin-top: 1rem; }
+.dog-photo-demo img { max-height: min(24rem, 60vh); object-fit: contain; }
+.dog-photo-demo > button { margin-top: 1rem; }
+.dog-photo-demo > button[aria-pressed="true"] { background: var(--fern); color: var(--ink); }
 fieldset { min-width: 0; margin: 0; padding: var(--space); border: 1px solid var(--rule); }
 legend { padding-inline: 0.4em; font-weight: bold; }
 fieldset > div { margin-bottom: var(--space); }

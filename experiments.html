@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="theme.js" defer></script>
     <script src="portfolio.js" defer></script>
-    <script src="project-highlights.js" defer></script>
+    <script src="dog-photos.js" defer></script>
   </head>
   <body class="experiments">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -53,17 +53,17 @@
 
       <section aria-labelledby="custom-heading">
         <h2 id="custom-heading">Custom elements</h2>
-        <div class="project-highlights-demo">
-          <project-highlights id="project-highlights"></project-highlights>
+        <div class="dog-photo-demo">
+          <dog-photo-viewer id="dog-photos"></dog-photo-viewer>
           <button
             class="button-secondary"
-            id="project-highlights-compact"
+            id="dog-photos-compact"
             type="button"
-            aria-controls="project-highlights"
+            aria-controls="dog-photos"
             aria-pressed="false"
             hidden
           >Compact view</button>
-          <noscript><p>Enable JavaScript to browse the project highlights.</p></noscript>
+          <noscript><p>Enable JavaScript to load a random dog photo.</p></noscript>
         </div>
         <p>
           The <code>portfolio-note</code> element marks the note in the Form controls
